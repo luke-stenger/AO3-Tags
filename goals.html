@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AO3 and BL</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AO3 and BL Tropes</h1>
+        <p>By Luke Stenger</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Welcome</a></li>
+            <li><a href="background.html">Background</a></li>
+            <li><a href="goals.html">Goals / Procedere</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="conclusion.html">Conclusions</a></li>
+        </ul>
+    </nav>
+
+    <section id="goals">
+        <h2>Goals</h2>
+        <p>My goal in this project was to see if it was possible to quantitatively analyze the tropes of M/M fiction. In our Boys Love's class, we collaborated with each other on <a href="https://docs.google.com/document/d/1kcm4TRtMFFCo2oYXR508TkrwdTTE1WtR8JlE9VvFHQ8?tab=t.1d0dgh9uepow" target="_blank">a document</a> that, among other things, listed and described various tropes characteristic of the BL genre. We did this by consuming various works of BL and looking for common elements.</p>
+        <p>While this method did uncover some interesting connections, it is flawed in some ways. It is difficult to tell if a trope is specifically characteristic of the BL genre, or if it is simply common in romance in general. For example, blood pacts and love triangles both featured in our readings and are listed as tropes on our shared document. However, are these tropes particularly associated with BL, or are they equally prevalent in other romance fiction? How can we begin to tackle this question when there is such a diversity of works in the world?</p>
+        <p>This project presents the beginnings of an approach to answering these questions. I will analyze data from the fanfiction repository Archive of Our Own (AO3), with a focus on finding story elements uniquely associated with male/male fiction. While the scope and applicability of my findings are severely limited (see <a href="conclusion.html#limitations">Limitations</a>), this project is among the few attempts to quantitatively analyse the elements of online fiction, and to my knowledge the first to apply it to specifically m/m fiction.</p>
+        <p>I chose AO3 for this study due to its size, transparency of data, and unique tagging system (see Design of AO3 section). The vast majority of AO3 fanfictions (or “fics”) include a relationship tag, indicating which type of relationship is featured (the most common being F/M, M/M, and F/F). In addition, fics usually include tags indicating fandom, rating, content warning, and a number of “freeform” tags that can indicate any type of story element or theme. Our analysis will focus on finding tags that are disproportionately represented in M/M fics vs F/M or F/F fics. For the sake of transparency, I will briefly describe the procedure used.</p>
+    </section>
+
+    <section id="procedure">
+        <h2>Procedere</h2>
+        <p>Data was obtained from a data dump released by AO3 admins in 2021. The data covers works released from September 2008 to February 2021. Of interest to us is the data describing which tags are used in each work. A python script was used to construct a list of all fics using the M/M tag, and a separate list of all fics using the F/M or F/F tag. Then the script counted how many times each individual tag appeared in each list. For this analysis, only canonical tags were counted: synonymous tags counted only for their canonical version (<a href="https://archiveofourown.org/faq/tags?language_id=en#canonicalhow" target="_blank">more info</a>).</p>
+        <p>Finally, to calculate the correlation between a particular tag and the M/M tag, I used the “odds ratio” statistic. For each tag, this statistic measures the ratio between the percent of M/M stories using the tag and the percent of F/M or F/F stories using the tag. Thus, a value greater than 1 indicates a tag disproportionately represented in M/M stories, a value less than 1 indicates a tag disproportionately underrepresented in M/M stories, and a value of exactly 1 indicates no correlation. We can imagine this statistic as the “BL-itude” of a tag. Check out the <a href="results.html">Results page</a> to see specific values for various tags.</p>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2025 Luke Stenger</p>
+    </footer>
+</body>
+</html>

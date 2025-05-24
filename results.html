@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AO3 and BL</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AO3 and BL Tropes</h1>
+        <p>By Luke Stenger</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Welcome</a></li>
+            <li><a href="background.html">Background</a></li>
+            <li><a href="goals.html">Goals / Procedere</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="conclusion.html">Conclusions</a></li>
+        </ul>
+    </nav>
+
+    <section id="results">
+        <h2>Raw Results</h2>
+        <p>These are the results of my analysis for Freeform tags on AO3:</p>
+        <div class="scrollable-text" id="text-container1">
+            Loading text...
+        </div>
+        <script>
+            fetch('freeform.txt')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('text-container1').textContent = data;
+                })
+                .catch(error => {
+                    document.getElementById('text-container1').textContent = 'Error loading text: ' + error;
+                });
+        </script>
+        <p>The number to the left of each tag gives the ratio between the percent of M/M stories using that tag and the percent of F/M or F/F stories using that tag. For example a value of 2 means the tag is twice as likely to be in an M/M fic than a non-M/M fic. Intuitively, a value higher than 1 means the tag is more prevelant in M/M fics, and a value lower than 1 means the tag is less prevelant in M/M fics compared to other romance-focused fics. For more information, see the <a href="goals.html#procedure">procedure section</a>.</p>
+        <p>The tags are sorted here by overall popularity. I’ve displayed values for the 20,000 most popular tags. Near the bottom of the list, the tags become very specific and much less frequently used. Thus, their values carry less weight, as the sample size of stories is much smaller. Note that a value of exactly 0.000 means that not a single M/M fic used that tag, while a value of “inf.” (i.e. infinite correlation) means that the tag was only ever used in M/M fics.</p>
+    </section>
+
+    <section id="analysis">
+        <h2>Some Analysis</h2>
+        <p>It's quite fun to peruse the list, and I encourage you to ctrl-f/cmd-f for some interesting tags to see how "BL-ish" they are on AO3. I will now focus in on some specific values and discuss their implications. Remember, these findings are very limited in scope (see <a href="conclusion.html#limitations">Limitations</a>).</p>
+        <p>The most obvious and strong correlations are seen when the tag directly references a genre of M/M or non M/M fiction:</p>
+        <div class="value-box" id="text-container">
+39.49 - Slash
+13.96 - Pre-Slash
+0.035 - Femslash
+        </div>
+        <p>Specific types of sex naturally have strong correlations...</p>
+        <div class="value-box" id="text-container">
+43.85 - Gay Sex
+0.227 - Heterosexual Sex
+0.038 - Lesbian Sex
+        </div>
+        <p>...as well as certain sex acts:</p>
+        <div class="value-box" id="text-container">
+7.399 - Anal Sex
+2.880 - Blow Jobs
+8.165 - Anal Fingering
+3.689 - Hand Jobs
+7.867 - Frottage
+
+0.777 - Oral Sex
+0.123 - Cunnilingus
+0.118 - Vaginal Fingering
+        </div>
+        <p>And finally here are a couple more tags that are (very unsurprisingly) assosiated with M/M fics:</p>
+        <div class="value-box" id="text-container" style="margin-bottom: 60px;">
+4.598 - Alpha/Beta/Omega Dynamics
+32.63 - Mpreg
+        </div>
+        <p>Next, we can look at some of our tropes from class, and see if they are actually disproportionately represented in M/M fics or not.</p>
+        <p>Dom/sub and hurt/comfort dynamics are indeed more prevelant in M/M fics, though not by as much as might be expected:</p>
+        <div class="value-box" id="text-container">
+1.448 - Dom/sub
+1.346 - Hurt/Comfort
+        </div>
+        <p>These tropes from our shared document do seem to characterize M/M fics:</p>
+        <div class="value-box" id="text-container">
+7.448 - Gay For You
+5.299 - Crossdressing
+2.823 - Blood Pacts
+1.603 - Red String of Fate
+1.523 - Sexual Abuse
+        </div>
+        <p>...but these ones seem to have little correlation:</p>
+        <div class="value-box" id="text-container">
+1.272 - Sharing a Bed
+1.242 - Unrequited Love
+0.996 - Enemies to Lovers
+        </div>
+        <p>...and these ones actually seem to be more common in non M/M fics:</p>
+        <div class="value-box" id="text-container">
+0.676 - Opposites Attract
+0.645 - Forbidden Love
+0.607 - Mentor/Protégé
+0.558 - Love Triangles
+0.442 - Tragic Romance
+0.194 - Female Antagonist
+        </div>
+        <p>Notably, female antagonists are much more represented in F/M or F/F fics compared to M/M fics, likely due to their role as romantic rivals.</p>
+        <p>Finally, the AO3 data does seem to support our observations on homosocial environments:</p>
+        <div class="value-box" id="text-container">
+1.691 - Alternate Universe - Boarding School
+1.534 - Rugby
+2.302 - Football
+3.650 - Minecraft
+1.482 - Ice Skating
+        </div>
+
+    </section>
+
+    <section id="fandom results">
+        <h2>Fandom Results</h2>
+        <p>While I will not analyze these in depth, I also wanted to include the M/M correlation values for fandom tags. Here are the 15,000 most popular fandoms on AO3:</p>
+        <div class="scrollable-text" id="text-container2">
+            Loading text...
+        </div>
+        <script>
+            fetch('fandom.txt')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('text-container2').textContent = data;
+                })
+                .catch(error => {
+                    document.getElementById('text-container2').textContent = 'Error loading text: ' + error;
+                });
+        </script>
+        <p>I'll just leave some interesting results down here:</p>
+        <div class="value-box" id="text-container">
+1.607 - Christian Bible
+0.606 - Christian Bible (Old Testament)
+1.930 - Christian Bible (New Testament)
+        </div>
+        <p>Now head to <a href="conclusion.html">the conclusion</a> to figure out what this all really means.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Luke Stenger</p>
+    </footer>
+</body>
+</html>

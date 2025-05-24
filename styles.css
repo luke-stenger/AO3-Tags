@@ -1,0 +1,85 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-indent: 2em;
+}
+
+.citation {
+    font-size: 18px;
+    line-height: 1.6;
+    padding-left: 2em;
+    text-indent: -2em;
+}
+
+header {
+    text-align: center;
+    padding: 2em;
+    background-color: #f8f9fa;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    background-color: #333;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    color: white;
+}
+
+h2 {
+    color: #333;
+}
+
+.scrollable-text {
+    width: 80%;
+    height: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    white-space: pre-wrap;
+    font-family: monospace;
+}
+
+.value-box {
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    white-space: pre-wrap;
+    font-family: monospace;
+    text-align: left;
+    padding: 0px 15px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
